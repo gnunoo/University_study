@@ -1,0 +1,109 @@
+#플레이페어 암호화.py
+
+key=input("키 값을 입력하세요: ")
+two_chr=input("묶음 문자를 지정해주세요: ")
+text=input("평문을 입력하세요: ")
+key=key.replace(" ","")
+key=key.upper()
+text=text.upper()
+two_chr=two_chr.upper()
+#키의 중복을 없앤다.
+key=list(key)
+result_key=[]
+for i in key:
+    if i not in result_key:
+        result_key.append(i)
+        
+#5*5암호화 테이블에 정사각형 순서대로 배열한다.
+# 1.대문자(알파벳)에 대한 정보를 배열에 넣는다.
+Alpha=[]
+for i in range(26):
+    Alpha.append(chr(ord("A")+i))
+
+for i in Alpha:
+    if i not in result_key:
+        result_key.append(i)
+
+# 2.묶음 문자 삽입
+for i in range(len(result_key)):
+    if result_key[i]==two_chr[0]:
+        result_key[i]=two_chr
+    elif result_key[i]==two_chr[1]:
+        break
+del result_key[i]
+
+# 3. 2차원 배열로 만든다.
+table=[]
+cnt=0
+for i in range(5):
+    temp=[]
+    for j in range(5):
+        temp.append(result_key[cnt])
+        cnt=cnt+1
+    table.append(temp)
+
+print("암호화 테이블: ")
+for i in table:
+    for j in i:
+        print(j,end=' ')
+    print()
+#4. 묶음 문자 하나로 만들기
+for i in range(5):
+    for j in range(5):
+        if table[i][j]==two_chr:
+            table[i][j]=two_chr[0]    
+#평문 쌍으로 묶기
+text=text.replace(' ','')
+text=list(text)
+result_text=[]
+result_text=text
+# 2번째 묶음 문자 첫번쨰 문자로 만들기
+for i in range(len(text)):
+    if result_text[i]==two_chr[1]:
+        result_text[i]=two_chr[0]
+# 평문에다 x 넣기
+for i in range(0,len(text),2):
+    if result_text[i]==result_text[i+1] :
+        result_text.insert(i+1,'X')
+    
+
+if len(result_text)%2==1:
+   result_text.append('X')
+
+#평문의 위치
+def locindex(c): #평문의 위치값 가져오기
+    location=[]
+    for i ,j in enumerate(table):
+        for k,l in enumerate(j):
+            if c==l:
+                location.append(i)
+                location.append(k)
+                return location
+
+#암호화
+
+cnt=0
+while cnt<len(result_text):
+    loc=[]
+    loc=locindex(result_text[cnt])
+    loc1=[]
+    loc1=locindex(result_text[cnt+1])
+    
+   
+    if loc[1]==loc1[1]:
+        result_text[cnt]=table[(loc[0]+1)%5][(loc[1])%5]
+        result_text[cnt+1]=table[(loc1[0]+1)%5][(loc1[1])%5]
+        
+    elif loc[0]==loc1[0]:
+        result_text[cnt]=table[(loc[0])%5][(loc[1]+1)%5]
+        result_text[cnt+1]=table[(loc1[0])%5][(loc1[1]+1)%5]
+       
+    else:
+        result_text[cnt]=table[(loc1[0])%5][(loc[1])%5]
+        result_text[cnt+1]=table[(loc[0])%5][(loc1[1])%5]
+        
+    cnt=cnt+2
+
+result_text=''.join(result_text)
+print("암호화 결과:")
+print(result_text)
