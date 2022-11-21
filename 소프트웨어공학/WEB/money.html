@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="money.css">
+  </head>
+  <body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <!-- 사이드바 -->
+        <div>
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div class="sidebar" style="overflow: auto; overflow-x: hidden;">
+                <!-- 프로필 정보 -->
+                <div style="background-color: black; width: 200px; height: 200px; border-radius: 70%; overflow: hidden; margin: 120px 50px 0px 50px;">
+                    <img src="defaultimg.jfif" alt="profile.img" style=" width: 100%; height:100%; object-fit: cover; margin: auto; display: block;">
+                </div>
+                <p style="color:azure; text-align: center; margin-top: 20px; margin-bottom: 0px;"> WELCOME </p>
+                <div style="color:azure; text-align: center">name 사원님</div>>
+                <!-- 일정 -->
+                <div>
+                    <h2 class="text-light">일정</h2>
+                    <div class="card mt-1">
+                        <div class="card-body">
+                            일정을 등록해주세요~
+                        </div>
+                    </div>
+                    <div class="card mt-1">
+                        <div class="card-body">
+                            일정을 등록해주세요~
+                        </div>
+                    </div>
+                    <div class="card mt-1">
+                        <div class="card-body">
+                            일정을 등록해주세요~
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <button style="text-align: center;" type="button" class="btn btn-secondary btn-lg">일정 등록</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            <!-- 화면 좁아지면 버튼 생김 -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <!-- 기능 메뉴 -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="human.html">인사 관리</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="money.html">재무 관리</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="object.html">재고 관리</a>
+              </li>
+            </ul>
+            <!-- 검색창 -->
+            <form class="d-flex" role="search" style="padding-right: 50px;">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <!-- 급여 -->
+    <div>
+        <div class="container text-center" style="margin-top: 50px; margin-bottom: 50px;">
+            <div class="row">
+                <div class="col-8">
+                    <h2 >
+                        급여
+                    </h2>
+                </div>
+                <div class="col-4">
+                    <form class="d-flex" role="search" >
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--데이터 테이블 -->
+        <div class="text-black-50" style="border: 1px solid; border-radius: 10px;">
+            <table class="table" style="margin-bottom: 0px;">
+                <thead>
+                  <tr>
+                    <tr>
+                        <th scope="col">사원코드</th>
+                        <th scope="col">사원명</th>
+                        <th scope="col">부서명</th>
+                        <th scope="col">프로젝트</th>
+                        <th scope="col">연장수당</th>
+                        <th scope="col">특근수당</th>
+                        <th scope="col">주말수당</th>
+                        <th scope="col">편집</th>
+                      </tr>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>
+                        <button type="button" class="btn-primary">수정</button>
+                        <button type="button" class="btn-primary">삭제</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>
+                        <button type="button" class="btn-primary">수정</button>
+                        <button type="button" class="btn-primary">삭제</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>
+                        <button type="button" class="btn-primary">수정</button>
+                        <button type="button" class="btn-primary">삭제</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>
+                        <button type="button" class="btn-primary">수정</button>
+                        <button type="button" class="btn-primary">삭제</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>default</td>
+                    <td>
+                        <button type="button" class="btn-primary">수정</button>
+                        <button type="button" class="btn-primary">삭제</button>
+                    </td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+        </div>
+        <!-- 급여등록 -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin: 10px">
+        등록
+        </button>
+        <!-- 모달 -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">인사 등록</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form action="">
+                    <div style="padding:20px; text-align:center; border: solid 2px rgba(219, 219, 219, 2); margin-top:30px; background:white">
+                        <div style="padding-bottom: 10px;">
+                            <p style="font-weight: bold; color: gray;padding-bottom: 10px;">급여정보를 등록해주세요</p>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" style="font-size:14px; height:20px;" id="person_code"
+                                       placeholder="name@example.com">
+                                <label for="floatingInput_email" style="font-size:14px; padding: 4px 10px">사원코드</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" style="font-size:14px; height:20px;" id="floatingInput_name"
+                                       placeholder="name@example.com">
+                                <label for="floatingInput_name" style="font-size:14px; padding: 4px 10px;">사원명</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" style="font-size:14px; height:20px;"
+                                       id="floatingInput_nickname" placeholder="name@example.com">
+                                <label for="floatingInput_nickname" style="font-size:14px; padding: 4px 10px;">부서명</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" style="font-size:14px; height:20px;" id="floatingPassword"
+                                       placeholder="Password">
+                                <label for="floatingPassword" style="font-size:14px; padding: 4px 10px;">프로젝트</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" style="font-size:14px; height:20px;"
+                                       id="floatingInput_nickname" placeholder="name@example.com">
+                                <label for="floatingInput_nickname" style="font-size:14px; padding: 4px 10px;">연장수당</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" style="font-size:14px; height:20px;"
+                                       id="floatingInput_nickname" placeholder="name@example.com">
+                                <label for="floatingInput_nickname" style="font-size:14px; padding: 4px 10px;">특근수당</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" style="font-size:14px; height:20px;"
+                                       id="floatingInput_nickname" placeholder="name@example.com">
+                                <label for="floatingInput_nickname" style="font-size:14px; padding: 4px 10px;">주말수당</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary">등록</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
